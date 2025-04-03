@@ -9,6 +9,7 @@ public class DefaultCountingOutRhymer {
         return total;
     }
 
+//<<<<<<< Accesory
     // Getter i setter dla numbers (w razie potrzeby)
     public int[] getNumbers() {
         return numbers.clone();  
@@ -19,6 +20,14 @@ public class DefaultCountingOutRhymer {
             this.numbers = numbers.clone();
         }
     }
+//=======
+    private static final int NUM = 12;
+    private static final int TOTAL = -1;
+    private static final int FULL = 11;
+
+    private final int[] numbers = new int[NUM];
+    public int total = TOTAL;
+//>>>>>>> master
 
     public void countIn(int in) {
         if (!isFull()) {
@@ -26,24 +35,38 @@ public class DefaultCountingOutRhymer {
         }
     }
 
+    
+
     public boolean callCheck() {
+//<<<<<<< Accesory
         return total == err_code;
+=======
+        return total == TOTAL;
+//>>>>>>> master
     }
 
     public boolean isFull() {
-        return total == 11;
+        return total == FULL;
     }
 
     protected int peekaboo() {
         if (callCheck()) {
+//<<<<<<< Accesory
             return err_code;
+//=======
+            return TOTAL;
+//>>>>>>> master
         }
         return numbers[total];
     }
 
     public int countOut() {
         if (callCheck()) {
+//<<<<<<< Accesory
             return err_code;
+//=======
+            return TOTAL;
+//>>>>>>> master
         }
         return numbers[total--];
     }
