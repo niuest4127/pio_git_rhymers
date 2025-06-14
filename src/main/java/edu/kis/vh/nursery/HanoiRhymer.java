@@ -17,3 +17,4 @@ public class HanoiRhymer extends DefaultCountingOutRhymer {
         }
     }
 }
+// Komentarz dla zadania --no-ff
