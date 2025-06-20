@@ -2,11 +2,15 @@ package edu.kis.vh.nursery;
 
 public class DefaultCountingOutRhymer {
     private static final int SIZE = 12;
-    private static final int ERR_CODE = -1;
     private static final int FULL_INDEX = SIZE - 1;
     
+    // Oddzielne stałe dla każdej metody - semantycznie różne cele
+    private static final int PEEKABOO_EMPTY_VALUE = -1;
+    private static final int COUNTOUT_EMPTY_VALUE = -1;
+    private static final int INITIAL_TOTAL_VALUE = -1;
+    
     private int[] numbers = new int[SIZE];
-    private int total = ERR_CODE;
+    private int total = INITIAL_TOTAL_VALUE;
     
     public void countIn(int in) {
         if (!isFull()) {
@@ -15,7 +19,7 @@ public class DefaultCountingOutRhymer {
     }
     
     public boolean callCheck() {
-        return total == ERR_CODE;
+        return total == INITIAL_TOTAL_VALUE;
     }
     
     public boolean isFull() {
@@ -24,14 +28,14 @@ public class DefaultCountingOutRhymer {
     
     protected int peekaboo() {
         if (callCheck()) {
-            return ERR_CODE;
+            return PEEKABOO_EMPTY_VALUE;
         }
         return numbers[total];
     }
     
     public int countOut() {
         if (callCheck()) {
-            return ERR_CODE;
+            return COUNTOUT_EMPTY_VALUE;
         }
         return numbers[total--];
     }
@@ -39,4 +43,4 @@ public class DefaultCountingOutRhymer {
     public int getTotal() {
         return total;
     }
-}// Komentarz dla zadania 5
+}// Fast-forward przesuwa wskaźnik bez merge commit, --no-ff zawsze tworzy merge commit zachowując strukturę gałęzi, --squash łączy wszystkie zmiany w jeden nowy commit, --ff-only merguje tylko jeśli możliwy jest fast-forward (inaczej błąd), a recursive automatycznie tworzy merge commit gdy fast-forward niemożliwy.
