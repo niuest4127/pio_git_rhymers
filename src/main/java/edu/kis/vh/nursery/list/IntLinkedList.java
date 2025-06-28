@@ -5,7 +5,7 @@ public class IntLinkedList {
     private static final int EMPTY_VALUE = -1;
     private static final boolean FULL_STATUS = false;
 
-    Node last;
+    private Node last;
     int i;
 
     public void push(int i) {
